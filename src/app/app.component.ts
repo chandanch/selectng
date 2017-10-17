@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
 
   getTeam(team) {
     console.log(team);
-    console.log(this.activeTeam);
   }
 }
 

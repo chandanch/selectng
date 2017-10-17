@@ -5,7 +5,7 @@
   </h1>
   <label for='teams'>Name:</label>
   <select id="teams"  class="form-control"  name="teams" [(ngModel)]="activeTeam" (ngModelChange)="getTeam($event)">
-    <option *ngFor="let team of teamList;">
+    <option *ngFor="let team of teamList;" [value]="team.name">
      {{team.name}}
     </option>
   </select>
