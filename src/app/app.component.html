@@ -4,11 +4,12 @@
     Welcome to {{title}}!
   </h1>
   <label for='teams'>Name:</label>
-  <select id="teams"  class="form-control"  name="teams" [(ngModel)]="activeTeam" (ngModelChange)="getTeam($event)">
-    <option *ngFor="let team of teamList;" [value]="team.name">
+  <select [compareWith]="compareFn" id="teams"  class="form-control"  name="teams" [(ngModel)]="activeTeam" (ngModelChange)="getTeam($event)">
+    <option *ngFor="let team of teamList; let i = index;"   [ngValue]="team">
      {{team.name}}
     </option>
   </select>
+  <button (click)="sendTeam(activeTeam)">Send team</button>
 </div>
 
 
