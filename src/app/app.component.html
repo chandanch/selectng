@@ -10,6 +10,12 @@
     </option>
   </select>
   <button (click)="sendTeam(activeTeam)">Send team</button>
+  <br>
+  <select name="players" id="players" class="form-control" [(ngModel)]="activePlayer" (ngModelChange)="getPlayer($event)">
+    <option *ngFor="let player of playersList; let i = index;" [ngValue]="player">
+      {{player.name}}
+    </option>
+  </select>
 </div>
 
 
