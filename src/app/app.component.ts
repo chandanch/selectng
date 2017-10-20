@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Brands} from './brands.model';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,29 @@ export class AppComponent implements OnInit {
   playersList: Player[] = [];
   public activeTeam;
   activePlayer;
+  activeBrand;
+  protected brands: Brands[] = [
+    {
+      id: 1,
+      name: 'Reebok'
+    },
+    {
+      id: 2,
+      name: 'Puma'
+    },
+    {
+      id: 3,
+      name: 'Nike'
+    },
+    {
+      id: 4,
+      name: 'Adidas'
+    }
+  ];
 
   ngOnInit() {
     this.activeTeam = this.teamList[1];
+    this.activeBrand = this.brands[1].name;
   }
 
   getTeam(team) {
@@ -46,6 +67,10 @@ export class AppComponent implements OnInit {
   compareFn(c1: Team, c2: Team): boolean {
     console.log(c2);
     return c1 && c2 ? c1 === c2 : c1 === c2;
+  }
+
+  getBrand(brand) {
+    console.log(brand);
   }
 }
 

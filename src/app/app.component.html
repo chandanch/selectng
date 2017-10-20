@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1>
     Welcome to {{title}}!
   </h1>
@@ -17,5 +17,14 @@
     </option>
   </select>
 </div>
-
+<br>
+<div>
+  <label>Select brand for shoes</label>
+  <input list="brands" name="brandsInput" [(ngModel)]="activeBrand" (ngModelChange)="getBrand($event)">
+  <datalist id="brands">
+    <option *ngFor="let brand of brands" [ngValue]="brand" [value]="brand.name">
+      {{brand.name}}
+    </option>
+  </datalist>
+</div>
 
