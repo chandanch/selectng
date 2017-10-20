@@ -20,7 +20,7 @@
 <br>
 <div>
   <label>Select brand for shoes</label>
-  <input list="brands" name="brandsInput" [(ngModel)]="activeBrand" (ngModelChange)="getBrand($event)">
+  <input list="brands" name="brandsInput" [(ngModel)]="activeBrand" (change)="getBrand($event.target.value)">
   <datalist id="brands">
     <option *ngFor="let brand of brands" [ngValue]="brand" [value]="brand.name">
       {{brand.name}}
