@@ -17,7 +17,7 @@
   </select>
 </div>
 <br>
-<div>
+<div [ngStyle]="dataListStyle">
   <label>Select brand for shoes</label>
   <input list="brands" name="brandsInput" [(ngModel)]="activeBrand" (change)="getBrand($event.target.value)">
   <datalist id="brands">

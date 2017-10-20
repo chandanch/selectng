@@ -18,6 +18,10 @@ export class AppComponent implements OnInit {
   activePlayer;
   activeBrand;
   selectStyle;
+  protected dataListStyle = {
+    'border': '2px solid orange',
+    'background-color': 'grey'
+  };
   protected brands: Brands[] = [
     {
       id: 1,
@@ -80,6 +84,12 @@ export class AppComponent implements OnInit {
 
   getBrand(brand) {
     console.log(brand);
+    if (brand === '') {
+      this.dataListStyle['border'] = '2px solid red';
+    } else {
+      this.dataListStyle['border'] = '2px dotted green';
+      this.dataListStyle['background-color'] = 'white';
+    }
   }
 }
 
