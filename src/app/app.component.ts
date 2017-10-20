@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   public activeTeam;
   activePlayer;
   activeBrand;
+  selectStyle;
   protected brands: Brands[] = [
     {
       id: 1,
@@ -39,11 +40,17 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.activeTeam = this.teamList[1];
     this.activeBrand = this.brands[1].name;
+    this.selectStyle = {
+      'none': true,
+      'selected': false
+    };
   }
 
   getTeam(team) {
     console.log(team);
     this.loadPlayers();
+    this.selectStyle.none = false;
+    this.selectStyle.selected = true;
   }
 
   loadPlayers() {
@@ -58,6 +65,8 @@ export class AppComponent implements OnInit {
 
   sendTeam(team) {
     console.log(`Team ${team.name} sent`);
+    this.selectStyle.none = false;
+    this.selectStyle.selected = true;
   }
 
   getPlayer(player) {
