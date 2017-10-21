@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   activePlayer;
   activeBrand;
   selectStyle;
+  protected dataListHeadingColor = '#FF5B3D';
   protected dataListStyle = {
     'border': '2px solid orange',
     'background-color': 'grey'
@@ -89,6 +90,7 @@ export class AppComponent implements OnInit {
     } else {
       this.dataListStyle['border'] = '2px dotted green';
       this.dataListStyle['background-color'] = 'white';
+      this.dataListHeadingColor = '#0f10ff';
     }
   }
 }

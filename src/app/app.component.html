@@ -18,6 +18,7 @@
 </div>
 <br>
 <div [ngStyle]="dataListStyle">
+  <h2 [style.color]="dataListHeadingColor">Using DataList</h2>
   <label>Select brand for shoes</label>
   <input list="brands" name="brandsInput" [(ngModel)]="activeBrand" (change)="getBrand($event.target.value)">
   <datalist id="brands">
