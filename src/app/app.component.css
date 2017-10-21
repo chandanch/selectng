@@ -4,3 +4,6 @@
 .none {
   border: none;
 }
+.selected-brand {
+  color: goldenrod;
+}

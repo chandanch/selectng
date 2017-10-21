@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
     'border': '2px solid orange',
     'background-color': 'grey'
   };
+  protected selectedBrandColor = '';
   protected brands: Brands[] = [
     {
       id: 1,
@@ -88,9 +89,11 @@ export class AppComponent implements OnInit {
     if (brand === '') {
       this.dataListStyle['border'] = '2px solid red';
     } else {
+      this.activeBrand = brand;
       this.dataListStyle['border'] = '2px dotted green';
       this.dataListStyle['background-color'] = 'white';
       this.dataListHeadingColor = '#0f10ff';
+      this.selectedBrandColor = 'selected-brand';
     }
   }
 }
