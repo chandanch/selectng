@@ -88,6 +88,7 @@ export class AppComponent implements OnInit {
     console.log(brand);
     if (brand === '') {
       this.dataListStyle['border'] = '2px solid red';
+      this.selectedBrandColor = 'selected-brand-empty';
     } else {
       this.activeBrand = brand;
       this.dataListStyle['border'] = '2px dotted green';
